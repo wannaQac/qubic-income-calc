@@ -1,0 +1,4 @@
+安装python和request模块即可
+
+在windows下直接双击run.bat运行
+可以自定义calc.py里的hashrate，修改自己的算力
