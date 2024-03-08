@@ -33,14 +33,16 @@ if login_response.ok and "token" in login_response.json():
         print('全网算力:', allnethash, 'it/s')
         print('当前纪元:', epoch)
         print('一个Sol预估币量:', coinperSol)
-        print('-----------------------------------') 
         
         # 获取qubic价格
         price_response = requests.get(price_url)
         if price_response.ok and "price" in price_response.json():
-          price  = price_response.json()['price']
-          income = round(coinperSol * float(price) * float(solperDay), 2)
+          price      = price_response.json()['price']
+          oneincome  = round(coinperSol * float(price), 2)
+          income     = round(coinperSol * float(price) * float(solperDay), 2)
           print('当前qubic价格: $', price)
+          print('一个Sol预估收益(USDT):', oneincome)
+          print('-----------------------------------') 
           print(hashrate, 'it/s 算力预估每日sol数量:', solperDay)
           print(hashrate, 'it/s 算力预估每日收益(USDT):', income)
           print('-----------------------------------') 
